@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel='stylesheet' href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+</style>
+
+
+ <!--Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      
+      <a href="home" class="w3-button w3-block w3-black"><i class="fa fa-moon-o w3-medium"></i>HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="diary" class="w3-button w3-block w3-black">DIARY</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="community" class="w3-button w3-block w3-black">COMMUNITY</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="about" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+  </div>
+</div>
+
+<body class="w3-light-grey" style="margin-top:100px">
+ <!--Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+   <!--The Grid -->
+  <div class="w3-row-padding">
+  
+     <!--Left Column -->
+    <div class="w3-third">
+    
+      <div class="w3-white w3-text-black w3-card-4">
+        <div class="w3-display-container">
+       
+          <div class="w3-display-bottomleft w3-container w3-text-black">
+           
+          </div>
+        </div>
+        <div class="w3-container" style = "background:url('/images/skypool.jpg');
+        background-repeat: no-repeat; background-size: cover;
+        width:400px;height:300px;overflow:auto;">
+          <h1>My Past Dreams</h1>
+          
+          <p>
+            <%@post.each do |p| %>
+            <p>
+              <a href = "/mydiary?id=<%=p.id%>" style="text-decoration: none">
+              <div style="width:115px; float:left">
+                <%=p.title%>
+              </div>
+              
+            <div style="width:200px; float:right;margin-left:50px"><%=p.created_at%></div>
+            </p></a><%end%>
+          </p>
+          
+          <hr>
+
+          <p class="w3-large"></p>
+          
+          <br>
+
+        </div>
+      </div><br>
+
+     <!--End Left Column -->
+    </div>
+<form method="post" action="/upload">
+     <!--Right Column -->
+    <div class="w3-twothird">
+    
+      <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+        
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-book fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Write Your Personal Diary</h2>
+        
+        <div class="w3-container" style = "background:url('/images/lined paper4.jpg');
+         background-size: cover;" style = 
+        "width:430px;height:500px;overflow:auto;">
+        
+        
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Dream Title</b></h5>
+          
+          <p>
+            
+              <input type = "text" name = "title" maxlength=15 style = "width:300px; opacity:0.8; margin-top: 16px;">
+              
+              
+            <!--</form>-->
+          </p>
+          
+          <hr>
+        </div>
+        
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Date</b> <%= Time.now.strftime("%m/%d/%Y") %></h5>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><br><b>Description</b></h5>
+        
+          <p>
+            <!--<form action="/upload" method="post">-->
+              <textarea rows="15" cols="70" name="content" style="text-indent: 50px"></textarea>
+
+
+              <input style="margin-bottom:3.8%" class="w3-button w3-black" type = "submit">
+            
+          </p>
+        </div>
+      </div>
+</form>
+     
+     <!--End Right Column -->
+    </div>
+    
+
+   <!--End Grid -->
+  </div>
+  
+  <!--End Page Container -->
+</div>
+
+
+</body>
+</html>
+
+
+
+

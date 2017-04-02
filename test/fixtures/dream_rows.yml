@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dreamt: MyString
+  dreamer: MyString
+  dreamc: MyString
+  hits: 1
+
+two:
+  dreamt: MyString
+  dreamer: MyString
+  dreamc: MyString
+  hits: 1

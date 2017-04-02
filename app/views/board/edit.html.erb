@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+.w3-sidenav a,.w3-sidenav h4 {font-weight:bold}
+table {
+color: #333; /* Lighten up font color */
+font-family: "Raleway", sans-serif; /* Nicer font */
+width: 640px;
+border-collapse:
+collapse; border-spacing: 0;
+}
+td, tr {
+border: 1px solid transparent; /* No more visible border */
+height: 30px;
+transition: all 0.3s; /* Simple transition for hover effect */} /* Make cells a bit taller */
+
+tr {
+background: #F3F3F3; /* Light grey background */
+font-weight: normal; /* Make sure they're bold */
+}
+
+td {
+background: #FAFAFA; /* Lighter grey background */
+text-align: center; /* Center our text */
+}
+
+</style>
+
+<header>
+ <!--Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      
+      <a href="home" class="w3-button w3-block w3-black"><i class="fa fa-moon-o w3-medium"></i>HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="diary" class="w3-button w3-block w3-black">DIARY</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="community" class="w3-button w3-block w3-black">COMMUNITY</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="about" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+  </div>
+</div>
+</header>
+
+<body class="w3-light-grey w3-content" style="background:url('/images/window.jpg'); background-size:cover;
+    background-repeat: no-repeat; background-attachment: fixed; position:absolute; 
+    min-width:100%; min-length:100%;">
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:30px;margin-right:30px">
+
+  <!-- Header -->
+ 
+    
+    <!--<h1 style="margin-top:7%;margin-left:40%"><b>Write Your Dreams</b></h1>-->
+    
+  <!--<div style="background:url('/images/cloud cup.jpg'); background-size:100%;-->
+  <!--  background-repeat: no-repeat;">-->
+    
+    
+<script language="javascript">
+    function savechange()
+    { 
+        var form = document.writeform;
+        form.submit();
+    }
+</script>
+
+<table border=1 cellspacing=0 cellpadding=10 style="margin-left:10%;margin-top:10%;width:80%;opacity:0.75; font-size:15px; font-family:"Raleway",sans-serif; align=right;">
+<form name=writeform method=post action="/update?id=<%=@id%>&current_page=<%=@current_page%>&searchStr=<%=@searchStr%>">
+  <input type="hidden" name="url" value="/viewWork?id=<%=@id%>&current_page=<%=@current_page%>&searchStr=<%=@searchStr%>">
+<tr><td align="left"><input type=text name=dreamt size=70  maxlength=50 value=<%=@rowData.dreamt%>></td></tr>
+<tr><td align="left"><input type=text name=dreamer size=70  maxlength=50 value=<%=@rowData.dreamer%>></td></tr>
+<tr><td align="left"><textarea name=dreamc cols=70 rows=10><%=@rowData.dreamc%></textarea></td></tr>
+</form>
+</table>
+<!--<div align="center" style ="margin-top:100">-->
+<!--<form action="" method="usrform">-->
+<!--    <input type="text" value="Title" size=50 maxlength=50 onfocus="value=''"><br>-->
+<!--    <input type="text" value="Anonymous Name" size=50 maxlength=30 onfocus="value=''"><br>-->
+<!--</form>  -->
+<!--<textarea rows="4" cols="50" name="comment" form="usrform">Write your dreams to share</textarea>-->
+
+<input class="w3-button w3-black" type=button value="Save" OnClick="javascript:savechange();" style = "margin-left:50%; margin-top:20px">
+</div>
+</div>

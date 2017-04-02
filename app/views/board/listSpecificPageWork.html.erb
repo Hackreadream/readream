@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+.w3-sidenav a,.w3-sidenav h4 {font-weight:bold}
+.cssbutton {font-family: "Raleway", sans-serif}
+
+</style>
+
+<header>
+ <!--Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      
+      <a href="home" class="w3-button w3-block w3-black"><i class="fa fa-moon-o w3-medium"></i>HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="diary" class="w3-button w3-block w3-black">DIARY</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="community" class="w3-button w3-block w3-black">COMMUNITY</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="about" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+  </div>
+</div>
+</header>
+
+<body class="w3-light-grey w3-content" style="max-width:1600px;">
+
+
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:20px;margin-right:30px">
+
+  <!-- Header -->
+ 
+    
+  <div class="w3-black">
+  <div id="bg" style="background:url('/images/cloud cup.jpg');
+    background-repeat: no-repeat; background-attachment: fixed; position:absolute; ㄷ
+    min-width:100%; min-length:100%; left:0; align:center; background-size:cover;">
+    
+    
+    <h1 style="margin-top:100px;margin-left:55px;color:#696969;opacity:0.9"><b>Share Your Dreams</b></h1>
+    <div class="w3-section w3-bottombar w3-padding-16">
+      <input class="w3-button w3-black" type= "submit" style ="margin-left:85%;"  value="New Dream"  OnClick="window.location='/newdream'" class="cssbutton">
+    </div>
+
+  
+  <!-- First Photo Grid-->
+  
+  <% if @boardList.any? %>
+    <ul>
+    <div class="w3-row-padding" style="margin-right:35px;">
+      <% @boardList.each do |boardRow| %>
+      
+    <div class="w3-third w3-container w3-margin-bottom">
+   
+      <div class="w3-container w3-white" style="height:100px;opacity:0.6">
+        <p style ="font-size:20px;margin:4% 0% 5% 0%"><a href="/viewWork?id=<%=boardRow.id%>&current_page=<%= @current_page %>&searchStr=None" style="text-decoration: none"><b><%=boardRow.dreamt%></b></a></p>
+        <p style="margin:0% 0% 0% 0%; font-size:15px">Dreamed by <%=boardRow.dreamer%></p>
+      </div>
+    </div><% end %></ul>
+    <% end %>
+  
+  
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32" style="color:#696969;opacity:0.9">
+    <div class="w3-bar">
+      <%  @totalPageList.each do |page| %>
+      <a href="/listSpecificPageWork?current_page=<%=page%>" style="text-decoration: none">
+      [
+      <% if page == @current_page.to_i %>
+        <b>
+      <% end %>
+      <%=page%>
+      <% if page == @current_page.to_i %>
+        </b>
+      <% end %>
+      ]
+      <% end %>
+     
+    </div>
+  </div>
+
+
+
+</body>
+</html>

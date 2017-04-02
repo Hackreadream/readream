@@ -1,9 +1,3 @@
-require 'test_helper'
-
-class ReadreamControllerTest < ActionController::TestCase
-  test "should get home" do
-    get :home
-    assert_response :success
-  end
+class ReadreamController < ApplicationController
 
 end

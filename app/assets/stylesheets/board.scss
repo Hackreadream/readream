@@ -1,7 +1,6 @@
-// Place all the styles related to the readream controller here.
+// Place all the styles related to the board controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 #bg {
   position: fixed; 
   top: 0; 
@@ -10,13 +9,4 @@
   /* Preserve aspet ratio */
   min-width: 100%;
   min-height: 100%;
-}
-
-div.aboutpic
-{
-    text-align: center; 
-   display: block;
-    margin: auto;
-    width: 40%;
-  display: inline-block;
 }
